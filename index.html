@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StartUp Growth | Alec Harden-Henry | B2B GTM & Sales</title>
-    <meta name="description" content="Alec Harden-Henry. Two decades closing complex B2B deals, from mid-market velocity to multi-threaded enterprise. UK, EMEA and US.">
+    <title>StartUp Growth | Alec Harden-Henry | Interim GTM & Sales Leadership</title>
+    <meta name="description" content="Alec Harden-Henry. Interim and fractional Head of GTM, New Business and Sales for B2B companies. Twenty years building and running sales. UK, EMEA and US.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -102,6 +102,15 @@
             color: var(--cyan);
         }
 
+        .nav-links a.nav-book {
+            color: var(--coral);
+            font-weight: 600;
+        }
+
+        .nav-links a.nav-book:hover {
+            color: #f07a52;
+        }
+
         /* ---- HERO ---- */
         .hero {
             position: relative;
@@ -191,6 +200,11 @@
             font-size: 15px;
             font-weight: 600;
             transition: all 0.2s;
+        }
+
+        .hero-links a.btn-primary,
+        .hero-links a.btn-secondary {
+            justify-content: center;
         }
 
         .btn-primary {
@@ -408,6 +422,88 @@
             color: var(--text-dim);
         }
 
+        /* ---- BOOKING DIALOG ---- */
+        .booking {
+            border: none;
+            padding: 0;
+            width: min(760px, 94vw);
+            height: min(780px, 90vh);
+            max-width: none;
+            max-height: none;
+            margin: auto;
+            border-radius: 12px;
+            background: var(--white);
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+        }
+
+        .booking[open] {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .booking::backdrop {
+            background: rgba(5, 16, 27, 0.75);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        .booking-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 12px 12px 20px;
+            background: var(--navy);
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .booking-bar h2 {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        .booking-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .booking-actions a {
+            color: var(--text-secondary);
+            font-size: 13px;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .booking-actions a:hover {
+            color: var(--cyan);
+        }
+
+        .booking-close {
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 6px;
+            background: transparent;
+            color: var(--white);
+            font-size: 28px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .booking-close:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .booking iframe {
+            flex: 1;
+            width: 100%;
+            border: 0;
+            background: var(--white);
+        }
+
         /* ---- RESPONSIVE ---- */
         @media (max-width: 768px) {
             .hero-text h1 {
@@ -445,6 +541,28 @@
             .nav-links {
                 display: none;
             }
+
+            .hero-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-links a {
+                padding: 14px 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .booking {
+                width: 100vw;
+                height: 100vh;
+                height: 100dvh;
+                border-radius: 0;
+            }
+
+            .booking-actions a {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -459,6 +577,7 @@
                 <li><a href="#track-record">Track Record</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="mailto:alec@startup-growth.co.uk">Email me</a></li>
+                <li><a href="https://calendar.app.google/uKtcnHivvRazQ5hw7" target="_blank" rel="noopener" class="nav-book" data-book>Book a call</a></li>
             </ul>
         </div>
     </nav>
@@ -470,10 +589,11 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Alec Harden-Henry</h1>
-                <p class="hero-attribution">Mid-Market & Enterprise AE | GTM - New Biz - Sales</p>
-                <p class="subtitle">Twenty years in GTM, closing complex B2B deals, from mid-market velocity to multi-threaded enterprise. Built commercial functions from zero, scaled revenue to £1m without investment, and helped AI-native companies sell into organisations that are still figuring out what AI means for them. UK, EMEA and US.</p>
+                <p class="hero-attribution">Interim Head of GTM, New Business and Sales</p>
+                <p class="subtitle">Twenty years in B2B GTM, new business and sales, most recently Head of New Business at Air Marketing. I step in as your Head of GTM, New Business or Sales on an interim or fractional basis, working with what you already have and making it scale. Built commercial functions from zero, scaled revenue to £1m without investment, and led new business at a 100-person outsourced sales agency. UK, EMEA and US.</p>
                 <div class="hero-links">
-                    <a href="mailto:alec@startup-growth.co.uk" class="btn-primary">Email me</a>
+                    <a href="https://calendar.app.google/uKtcnHivvRazQ5hw7" target="_blank" rel="noopener" class="btn-primary" data-book>Book a call</a>
+                    <a href="mailto:alec@startup-growth.co.uk" class="btn-secondary">Email me</a>
                     <a href="https://www.linkedin.com/in/alec-harden-henry/" target="_blank" class="btn-secondary">LinkedIn</a>
                 </div>
             </div>
@@ -486,7 +606,7 @@
     <section id="what-i-do">
         <p class="section-label">What I Do</p>
         <h2>GTM strategy that converts into pipeline</h2>
-        <p class="section-intro">Whether you need a founding AE to build your first repeatable sales motion, a mid-market closer to accelerate pipeline, or an enterprise seller who can navigate complex multi-stakeholder deals, I bring the same approach: get in, build the engine, and make it work.</p>
+        <p class="section-intro">Whether you need someone to take sales off the founder's plate, cover a leadership gap, or get a new market or motion off the ground, I bring the same approach: find what's already working, fix what isn't, and build what's missing.</p>
 
         <div class="capabilities-grid">
             <div class="capability-card">
@@ -494,8 +614,8 @@
                 <p>ICP definition, outbound playbook design, channel strategy, and pipeline generation from a standing start. I've done this across the UK, France, Germany, Italy, Sweden, US and Australia.</p>
             </div>
             <div class="capability-card">
-                <h3>Full-Cycle Enterprise Sales</h3>
-                <p>Discovery through close on complex, multi-threaded deals. MEDDPICC-qualified. Six-figure recurring contracts with global holding companies and household brands.</p>
+                <h3>Sales Leadership</h3>
+                <p>Sales process, qualification, forecasting and CRM discipline. Coaching SDRs and closers against clear exit criteria, while still closing deals myself.</p>
             </div>
             <div class="capability-card">
                 <h3>GTM Build & Scale</h3>
@@ -514,6 +634,14 @@
         <h2>Two decades of building and closing</h2>
 
         <div class="track-record-grid">
+            <div class="track-item">
+                <div class="track-role">Head of New Business</div>
+                <div class="track-detail">
+                    <h3>Air Marketing (Outsourced SDR/BDR Agency)</h3>
+                    <div class="company">2026</div>
+                    <p>Led new business for a 100-person outsourced sales agency. Took ownership of the end-to-end sales process from the CEO within 30 days, and was closing deals single-handedly within 60. Built a qualification framework now used as HubSpot stage criteria and by marketing, and designed an engagement-scored dialling queue that puts warmed contacts ahead of cold data.</p>
+                </div>
+            </div>
             <div class="track-item">
                 <div class="track-role">Founding AE</div>
                 <div class="track-detail">
@@ -581,10 +709,51 @@
             <div class="footer-links">
                 <a href="mailto:alec@startup-growth.co.uk">alec@startup-growth.co.uk</a>
                 <a href="https://www.linkedin.com/in/alec-harden-henry/" target="_blank">LinkedIn</a>
+                <a href="https://calendar.app.google/uKtcnHivvRazQ5hw7" target="_blank" rel="noopener" data-book>Book a call</a>
             </div>
+            <!-- Once Vocara is live: <p class="footer-note">Need outbound meetings rather than a sales leader? See <a href="https://vocara.agency">Vocara</a></p> -->
             <p class="footer-note">StartUp Growth Ltd - UK</p>
         </div>
     </footer>
+
+    <!-- https://calendar.app.google/uKtcnHivvRazQ5hw7ING -->
+    <dialog class="booking" id="booking" aria-labelledby="booking-title">
+        <div class="booking-bar">
+            <h2 id="booking-title">Book a call with Alec</h2>
+            <div class="booking-actions">
+                <a href="https://calendar.app.google/uKtcnHivvRazQ5hw7" target="_blank" rel="noopener">Open in new tab</a>
+                <button type="button" class="booking-close" aria-label="Close">&times;</button>
+            </div>
+        </div>
+        <iframe title="Booking calendar" data-src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2LkI9BvQKhEdasXVrCSTdpoiSwTU7hbE-LO2pUPm-pp7Bg_vkQrkflNBFKx5FkS8vekHAsQENu?gv=true"></iframe>
+    </dialog>
+
+    <script>
+        (function () {
+            var dialog = document.getElementById('booking');
+            if (!dialog || typeof dialog.showModal !== 'function') return;
+            var frame = dialog.querySelector('iframe');
+
+            document.querySelectorAll('[data-book]').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (!frame.src) frame.src = frame.dataset.src;
+                    dialog.showModal();
+                    document.documentElement.style.overflow = 'hidden';
+                });
+            });
+
+            dialog.querySelector('.booking-close').addEventListener('click', function () {
+                dialog.close();
+            });
+            dialog.addEventListener('click', function (e) {
+                if (e.target === dialog) dialog.close();
+            });
+            dialog.addEventListener('close', function () {
+                document.documentElement.style.overflow = '';
+            });
+        })();
+    </script>
 
 </body>
 </html>
