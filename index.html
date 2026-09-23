@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartUp Growth | Alec Harden-Henry | B2B GTM & Sales</title>
+    <meta name="description" content="Alec Harden-Henry. Two decades closing complex B2B deals, from mid-market velocity to multi-threaded enterprise. UK, EMEA and US.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* SUG Brand Palette */
+            --navy: #0d2e49;
+            --grey: #758689;
+            --coral: #e1653d;
+            --cyan: #00c4cc;
+            --white: #ffffff;
+
+            /* Derived colours */
+            --navy-light: #143a5c;
+            --navy-dark: #091e30;
+            --bg: #0a1f33;
+            --bg-card: #0e2840;
+            --bg-subtle: #091b2d;
+            --text: #e2e6e8;
+            --text-secondary: #a0adb3;
+            --text-dim: #758689;
+            --max-width: 900px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, .nav-brand, .metric-item .number, .section-label {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* ---- NAV ---- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 31, 51, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 196, 204, 0.1);
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-brand span {
+            color: var(--cyan);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyan);
+        }
+
+        /* ---- HERO ---- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('images/hero-bg.jpg?v=7');
+            background-size: cover;
+            background-position: 65% 60%;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(
+                to right,
+                rgba(10, 31, 51, 0.88) 0%,
+                rgba(10, 31, 51, 0.7) 50%,
+                rgba(10, 31, 51, 0.4) 100%
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 120px 24px 80px;
+            width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 51px;
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--white);
+            margin-bottom: 24px;
+            max-width: 600px;
+        }
+
+        .hero-text h1 span {
+            color: var(--cyan);
+        }
+
+        .hero-text .subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 540px;
+        }
+
+        .hero-attribution {
+            font-size: 23px;
+            font-weight: 700;
+            color: var(--cyan);
+            margin-bottom: 32px;
+        }
+
+        .hero-attribution a {
+            color: var(--cyan);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .hero-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--coral);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #c9552f;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--cyan);
+            border: 1px solid rgba(0, 196, 204, 0.4);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--cyan);
+            background: rgba(0, 196, 204, 0.05);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 28px;
+            animation: bounce 2s ease infinite;
+            text-decoration: none;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ---- SECTIONS ---- */
+        section {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--coral);
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .section-intro {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 620px;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        /* ---- WHAT I DO ---- */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .capability-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 196, 204, 0.08);
+            border-radius: 10px;
+            padding: 28px;
+            transition: border-color 0.2s;
+        }
+
+        .capability-card:hover {
+            border-color: rgba(0, 196, 204, 0.2);
+        }
+
+        .capability-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .capability-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        /* ---- TRACK RECORD ---- */
+        .track-record-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        .track-item {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            gap: 24px;
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(117, 134, 137, 0.12);
+        }
+
+        .track-item:last-child {
+            border-bottom: none;
+        }
+
+        .track-role {
+            font-size: 13px;
+            font-family: 'Lato', sans-serif;
+            color: var(--coral);
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .track-detail h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .track-detail .company {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .track-detail p {
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 1.65;
+        }
+
+        /* ---- TESTIMONIALS ---- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 196, 204, 0.08);
+            border-radius: 10px;
+            padding: 28px;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 15px;
+            color: var(--text);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card .attribution {
+            font-family: 'Lato', sans-serif;
+            font-size: 13px;
+            color: var(--cyan);
+            font-weight: 700;
+        }
+
+        .testimonial-card .attribution span {
+            color: var(--text-dim);
+            font-weight: 400;
+        }
+
+        /* ---- FOOTER ---- */
+        footer {
+            border-top: 1px solid rgba(0, 196, 204, 0.1);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--cyan);
+        }
+
+        .footer-note {
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .hero-bg {
+                background-position: 55% 60%;
+            }
+
+            .hero-overlay {
+                background: rgba(10, 31, 51, 0.6);
+            }
+
+            .capabilities-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .track-item {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 28px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="nav-brand">StartUp <span>Growth</span></a>
+            <ul class="nav-links">
+                <li><a href="#what-i-do">What I Do</a></li>
+                <li><a href="#track-record">Track Record</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="mailto:alec@startup-growth.co.uk">Email me</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Alec Harden-Henry</h1>
+                <p class="hero-attribution">Mid-Market & Enterprise AE | GTM - New Biz - Sales</p>
+                <p class="subtitle">Twenty years in GTM, closing complex B2B deals, from mid-market velocity to multi-threaded enterprise. Built commercial functions from zero, scaled revenue to £1m without investment, and helped AI-native companies sell into organisations that are still figuring out what AI means for them. UK, EMEA and US.</p>
+                <div class="hero-links">
+                    <a href="mailto:alec@startup-growth.co.uk" class="btn-primary">Email me</a>
+                    <a href="https://www.linkedin.com/in/alec-harden-henry/" target="_blank" class="btn-secondary">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <a href="#what-i-do" class="hero-scroll">&#8964;</a>
+    </div>
+
+
+    <!-- WHAT I DO -->
+    <section id="what-i-do">
+        <p class="section-label">What I Do</p>
+        <h2>GTM strategy that converts into pipeline</h2>
+        <p class="section-intro">Whether you need a founding AE to build your first repeatable sales motion, a mid-market closer to accelerate pipeline, or an enterprise seller who can navigate complex multi-stakeholder deals, I bring the same approach: get in, build the engine, and make it work.</p>
+
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <h3>New Market Entry</h3>
+                <p>ICP definition, outbound playbook design, channel strategy, and pipeline generation from a standing start. I've done this across the UK, France, Germany, Italy, Sweden, US and Australia.</p>
+            </div>
+            <div class="capability-card">
+                <h3>Full-Cycle Enterprise Sales</h3>
+                <p>Discovery through close on complex, multi-threaded deals. MEDDPICC-qualified. Six-figure recurring contracts with global holding companies and household brands.</p>
+            </div>
+            <div class="capability-card">
+                <h3>GTM Build & Scale</h3>
+                <p>Sales process architecture, pricing strategy, content-driven demand gen, and the operational foundations that take a company from founder-led sales to a scalable commercial function.</p>
+            </div>
+            <div class="capability-card">
+                <h3>AI-Native Sales Operations</h3>
+                <p>Building and deploying AI-powered prospecting workflows, automated research pipelines, and intelligent outreach systems that multiply individual output without adding headcount.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRACK RECORD -->
+    <section id="track-record">
+        <p class="section-label">Track Record</p>
+        <h2>Two decades of building and closing</h2>
+
+        <div class="track-record-grid">
+            <div class="track-item">
+                <div class="track-role">Founding AE</div>
+                <div class="track-detail">
+                    <h3>RevvedUp (AI-Powered ABM)</h3>
+                    <div class="company">2025 - 2026</div>
+                    <p>Owned the full commercial function for an AI-native ABM platform. 63.9% discovery-to-evaluation conversion. 51-day average deal velocity. Navigated a strategic pivot from managed service to product-led motion in 6 weeks.</p>
+                </div>
+            </div>
+            <div class="track-item">
+                <div class="track-role">Founder & GTM Consultant</div>
+                <div class="track-detail">
+                    <h3>StartUp Growth</h3>
+                    <div class="company">2023 - 2026</div>
+                    <p>Independent GTM consultancy helping B2B companies build scalable sales engines. £600K pipeline in a first week. 40 outbound meetings in a single month. 15 SQOs in 4 weeks for a loyalty martech platform. Secured C-level meetings with Nike, Walmart, and Unilever for a client.</p>
+                </div>
+            </div>
+            <div class="track-item">
+                <div class="track-role">Commercial Director then MD</div>
+                <div class="track-detail">
+                    <h3>Influence Network (Influencer Martech)</h3>
+                    <div class="company">2019 - 2023</div>
+                    <p>Employee #1. Built the entire commercial function from zero to £1M ARR across 4 years without external investment. Won contracts with IPG, WPP, Omnicom and brands including AB InBev, Rolls Royce Motor Cars, Beaverbrooks, and Aldi. Six-figure recurring contracts across UK, EU, US and Australia. Promoted to MD after 2 years.</p>
+                </div>
+            </div>
+            <div class="track-item">
+                <div class="track-role">Earlier career</div>
+                <div class="track-detail">
+                    <h3>Agency, PR & Business Development</h3>
+                    <div class="company">2006 - 2019</div>
+                    <p>13 years across agency account management (HP, IBM, Virgin, Lenovo), B2B sales (holiday parks, professional networks), and digital marketing. Includes 6 years in Dubai across PR, ad tech, and marketing leadership. Recaptured cancelled accounts at 4x previous revenue. Brought £10M+ opportunities from cold outreach.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <p class="section-label">What People Say</p>
+        <h2>From the people I've worked with</h2>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <blockquote>"My GTM secret weapon. Alec transforms complex strategy into simple, actionable plans."</blockquote>
+                <div class="attribution">Craig Patton <span>- Repeat client</span></div>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>"The engine behind the company's sales and marketing. Quite incredible what he delivered."</blockquote>
+                <div class="attribution">Helen Trickey <span>- Conspiracy of Love</span></div>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>"There is a clear link between the work Alec and I did together and the successes our customers have since enjoyed."</blockquote>
+                <div class="attribution">Darren Thayre <span>- Google</span></div>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>"Completely shifted how I think about our ICP. He rebuilt our lead list, started outreach, and suddenly we were swamped with meetings."</blockquote>
+                <div class="attribution">Madalin Chirila <span>- Guidesight</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="mailto:alec@startup-growth.co.uk">alec@startup-growth.co.uk</a>
+                <a href="https://www.linkedin.com/in/alec-harden-henry/" target="_blank">LinkedIn</a>
+            </div>
+            <p class="footer-note">StartUp Growth Ltd - UK</p>
+        </div>
+    </footer>
+
+</body>
+</html>
